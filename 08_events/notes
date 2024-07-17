@@ -1,0 +1,14 @@
+*** "SetTimeout" and "setInterval"
+SetTimeout:=it take time and complete only one time
+setInterval:-it take time and work continually(ruk ruk kar between time it's work)
+
+** SetTimeout api :-take function/reference and take time for exection
+
+
+***setInterval,SetTimeout,clear intervel,clear timeout etc :=it all part of asynchrous(jaruri nhi ki asynchrous ka matlab hamesha web page pe request bhejho)
+**js khudke under break in hai
+**js not by default asynchrous usko bnana pdta hai kuch api ko use krke jaise "SetTimeout" ka,
+**tho esliye google pe jab aap search krte ho tho apko dekhte ho ko "js is asynchrous languguage hai"
+**tho yes "js is asynchrous language hai because jo api aw rhi hai woh js ke saat" athi hai
+**jo default engine hai js ka woh nhi hai asynchrous
+***but jo complete js ka run time engine hai woh asynchrous hai

@@ -1,0 +1,113 @@
+Javascript:-
+:-it is synchronous
+:-it is used single threaded
+
+both behaviour perform in "default js"
+
+** Execution Context **
+
+:- execute one line of code at a time
+
+console.log(1) //first run this
+console.log(2) //second run this
+
+:-Each opeartion waits for the last one to complete before executing
+
+there are two memory
+:- call stack
+:-memory heap
+
+
+** Blocking code vs Non Blocking code **
+
+it is synchronous
+blocking code:-block the flow of program
+Read:-read file synchronous
+
+example:-if you go somewhere home as guest and that person told you sit in silent(don't do anything),untill i will not come home
+so in this situation you had been blocked and you couldn't perform any task
+
+**Non blocking code**
+block:-doesn't block execution
+read=it read file async
+
+example:-if you go somewhere home as guest and that person told you whatever you want to perform task you can,untill i will not come home
+so in this situation you had not been any restriction and you could perform any task,so in this situation you can complete your own task
+
+:-now you will think async is best but not let see situation
+** now any user had register and before register you send message "you r done register" but untill file save procedure not complete
+and during procedure any error can occur but already you send "done register",so it will be wrong
+
+
+**********it depend on use cases which one you should use or not use
+
+*******diagram you can see js part 2(chai aur code 4:31:14)
+
+
+# when you use "web api environment" then you can access "DOM api" and when you use "node" environment you couldn't accesss "dom api"
+
+# TASK QUEUE:-it make js "fast and asynchronous"
+** aap koi kaam dete ho krne ko aur yeh bhi kehte ho ki jab complete ho jaye tho yaad dila dena (so this kind of work for
+ we have "web api" or "Node api")
+*let see example:-
+we have function that function call set timout(it is async and will find in "web api" or "node api") after you set
+ time this function will call after '2 second' then it will register "REgister call back(here we tell konse time pe kya hona hai
+ ja koi event kb perform hona hai ye sab bataya jata hai)" ,ab jo "register call back" hai aggr koi kaam krna hoga ja koi aisa event hoga uss
+ time soon as possible "task Queue" main apne "call back" ko add kr dunga
+ab woh call back ho skta hai "button event ho" ja "set time out " ho etc, ab jo task queue hai "ye sab collection of call back of stack main
+ add kr deta hai"
+
+example:= which one will execute first
+function:-fun1,function with set timout fun2((0 second,task)) first time second functin,function(num3) :-now you will think after first
+"fun1" run then second "fun2" will execute but not because "fun2 " first perform procedure to execute so during this procedure take time untill
+ this finish before fun3 execute becaue "fun3" is normal function and it doesn't take time
+
+
+
+**** there is also added new api like "fetch()" api so it also work on same concept "task queue" but it work on "promises ,{it tell if work
+complete then tell or not complete then also tell}" and so just remember "jab fetch()" main jab koi "promises queue" banti hai tho same es main
+bhi "call back" hoti hai aur "call stack" main add ki jati hai but es main ye hi change hai ki es ki "high priority" hoti hai
+
+***** HIGh priority means (give most important as compared to other task execution)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

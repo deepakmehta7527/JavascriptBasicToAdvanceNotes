@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul class="language"><li>javascript</li></ul>
+
+</body>
+<script>
+  //****************it created simple function
+  function addlang(prolang){   //*** basically in this function add item end of the list so traverse everytime whenever you call so it take more time and not optimize method
+    const li=document.createElement('li');
+    li.innerHTML=`${prolang}`    //*******innerHTML means when ever you call this function first it will traverse and then add itme same procedure repeat until you call function
+   document.querySelector('.language').appendChild(li)
+  }
+  // addlang('phython')
+
+//************let see optimized method and this method use more and avoid above method
+function addlangoptimize(prolang){
+    const li=document.createElement('li');  //first create "list" tag ,after insert content,now find attribute where you want to apply
+    li.appendChild(document.createTextNode(prolang))    //******* "appendChild" directly add without traverse parent node to child node
+   document.querySelector('.language').appendChild(li)
+  }
+
+  addlangoptimize('java')
+  addlangoptimize('python')
+
+
+//Edit:-best way(let modify second element)
+const secondlang=document.querySelector('li:nth-child(2)');
+// const li=document.createElement('li'); //not optimize
+// li.innerHTML="mojo" //not optimize
+
+const newli=document.createElement('li');
+newli.textContent="Mojo"
+secondlang.replaceWith(newli);
+
+//edit:-let modify first element
+const firstlang=document.querySelector("li:first-child");
+firstlang.outerHTML='<li>TypeScript</li>'
+
+//***************remove :- let remove last elemet of 'python'
+// const lastlang=document.querySelector("li:last-child");
+// lastlang.remove()
+
+
+
+
+
+</script>
+
+
+</html>

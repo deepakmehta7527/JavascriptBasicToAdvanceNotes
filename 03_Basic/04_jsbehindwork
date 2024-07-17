@@ -1,0 +1,94 @@
+                     javascript executional context(means whatever you write code how js will run and execute)
+
+
+//****************when we you run code first that follow some procedure to execute code
+
+->first it will make "global execution context(GEC)"
+->"this" will refer(indicate or storing) GEC
+
+->importiant notes*******************'Browser and node' GEC both are different
+->Browser have 'this' value window object
+
+-->javascript is signle thread
+
+//************************there are three type of Execution context***********
+a)global
+b)function
+c)eval           (not important  if yout mention above two type also enough)
+
+//*********let see how is it execute
+=>we have code file  that run into two phases:-
+a)memory creation pahse or creation phase :-there is allocate space for each variable in memory it doen't execute
+b)execution phase:-where is it run and perform operation
+
+given code below:-
+
+let num1=10;
+let num2=20;
+function add(val1,val2){
+  let total=val1+val2;
+  return total
+}
+
+result1=add(num1,num2);
+result2=add(10,5);
+
+step1 run any code first will run 'global execution' after run it allocate in 'this'
+step2 'memoryt phase' collect all variable and give space keep in memory
+let allocate variable
+->num1=undefined
+->num2=undefined'
+->add=defined (means all inside function will not execute still but that is defined)
+->result1=undefined
+->result2=undefined
+//*****above is 'first cycle' now let see 'second cycle'
+
+//#############Execution phase
+=>num1=10
+=>num2=20
+=>function addnum(){} already defined and we don't have anything for execution so skip in execution phase this line
+
+=> add()  //A)call add function so again create 'new executional context'
+->B)new executional context hold:-1)new environment variable 2)executional thread
+->C)now again two operation perform 1)memroy phase 2) execution pahse
+===>&&&&&&&&##########important notes whenever new function call that time again perform operation above A,B,C
+
+###Again first 'memory phase'
+val1=undefined
+val2=undefined
+total=undefined
+
+## Creation phase
+val1=10,val2=20
+total=10+20=>30(it will return "global execution context") after return then result1 will store value
+
+same procedure repeat again and again till all function call end
+
+//******call stack work as like (lifo) call stack compulsory hold (global execution code)
+so when we call any function that variable first store here and executing time perform operation and delete from stack memory
+
+//if you want to know more then search on youtube "how call stack memory work in js"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

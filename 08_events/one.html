@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a
+            style="color: aliceblue"
+            target="_blank"
+            href="https://google.com"
+            id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //***********in javascript  "all event" run sequence wise but some cases we ignore and that work based on "event" functionality like 'move mouse','click on keyboard','drag and drop' etc
+
+    //*********let see how to use event
+    document.getElementById("owl").onclick = function () {
+      alert("owl clicked"); //we don't  need to use '.onclick' event in this way because when we use this way that doesn't provide extra features
+    };
+
+    //****** best approach is (addEventListener):-it is most powerful eventtarget that used 'onclick',onchange,onmouseover etc
+
+    document
+      .getElementById("images")
+      .addEventListener("click", (e) => console.log("clicked inside the ul")); //***event propagation means bubbling up (when you click on images it show top but when you click "clicked owl" automatically image show down and "owl show top" because whatever "script tracking element from inside to outside")
+    // ***when you pass "false" and "'bydefault' use false "  that means it work like bubbling up  ,it work "bottom" to " top"
+    // ***** when you pass "true" then it work in "capturing mode" means now 'ul' come top and 'li' bottom so it work "top" to "bottom"
+
+    document.getElementById("owl").addEventListener("click", function (e) {
+      console.log("clicked owl");
+      e.stopPropagation(); //now when you click that function call
+    });
+
+    document.getElementById("google").addEventListener(
+      "click",
+      function (e) {
+        e.preventDefault();
+        e.stopPropagation(); //it stop to perform action
+        console.log("google clicked");
+      },
+      false
+    );
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+      console.log("it is parent :-", e.target.parentNode);
+      console.log("it is child :-", e.target);
+      if (e.target.tagName === "IMG") {
+        let removeIt = e.target.parentNode; //currently "e.target" pointing on "img" and there parent is "list" so list wiil be deleted
+      }
+    });
+
+    /* this is important for interview :-
+// **let see which one event you should read
+
+//****event:=type(read 'mouse event type','keyboard event type' etc),timestamp(time,date etc),Preventeddefault
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+*/
+  </script>
+</html>

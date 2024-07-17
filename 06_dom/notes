@@ -1,0 +1,109 @@
+//****first element id element fetch then after change using innerHTML
+//document.getElementById("Names_and_epithets").innerHTML='<h2>good morning<h2>'
+
+
+//help of id you can that heading line
+  document.getElementById("firstHeading")
+
+  //you can fetch there class using className and use here className instead of class because behind scene it work with className
+  document.getElementById("firstHeading").className
+
+  //you access there attribute value pass with attribute
+  document.getElementById("title").getAttribute("class") //first pass id and second pass attribute
+
+  //even you can change attribute value,first pass attribute and second value that value is new name of attribute
+  document.getElementById("title").setAttribute("class","test")
+
+//first store fetch id in new variable and second perform operation
+const title=document.getElementById("title");
+
+//now perform operation
+title.style.backgroundColor='green'  //title.style.(write which kind of operation do you want to perform)
+
+
+//*************interested how to add content
+//title.innerText    //*********it show which content display
+'Dom leaning on chai aur code'
+
+//********it show full contect even which hidden content which one hide by user using some style
+//title.textContent
+'Dom leaning on chai aur code test text'
+
+
+
+//**********inner html also show html tag which one you have written
+//title.innerHTML
+'Dom leaning on chai aur code <span style="display:none;">test text</span>'
+
+//************query selector select first  element only and perform operation ,in query selector same work as like css selector work
+//document.querySelector('h2')
+//document.querySelector('input[type="password"]')
+
+
+
+//*********** querySelectorAll()  select more then one attribute
+<!-- const print=document.querySelectorAll('li') -->  //after store variable then if you print come option
+//**********print
+
+<!-- NodeList(3) [li, li, li]
+0
+:
+li
+1
+:
+li
+2
+:
+li
+length
+:
+3
+[[Prototype]]
+:
+NodeList -->
+//*********above NodeList and open Prototype then you will see there 'forEach' now you think this is  array but not because in there prototype not mention "map,push,pop etc"
+
+//above mention NodeList you can modify there name using index or forEach use to access,let see example
+//***************first example :- li[0].style.color="red"  *******2nd example:-li.forEach((li)=>(li.style.backgroundColor="blue"));             ******
+
+
+
+//******Important concept***********Let see how to convert html collection into array
+
+// ****************Html collection
+document.getElementsByClassName("name");
+HTMLCollection(3) [li.name, li.name, li.name]
+
+<!-- first  fetch content-->
+const fi=document.getElementsByClassName("heading");
+
+<!-- second convert into array -->
+modify=Array.from(fi)
+
+<!-- perform operation -->
+modify.forEach((t)=>(t.style.color="red"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

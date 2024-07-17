@@ -1,0 +1,41 @@
+<!-- //before "fetch request" we were using "xml" request //xmlhttpRequest most
+important thing and even currently also used in more framework //ajax not more
+will be in use but for knowledge purpose we are understanding -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121">
+    0 UNSENT Client has been created. open() not called yet. 1 OPENED open() has
+    been called. 2 HEADERS_RECEIVED send() has been called, and headers and
+    status are available. 3 LOADING Downloading; responseText holds partial
+    data. 4 DONE The operation is complete.
+  </body>
+  <script>
+    // "XMLHttpRequest()" :- this is class and you want to make object we uses "new" keyboard that we had make fresh object
+    const xhr = new XMLHttpRequest();
+    const requestUrl = "https://randomuser.me/api/";
+    xhr.open("GET", requestUrl); //we pass 'method' and "url"
+xhr.onreadystatechange=function(){  //onreadystatechange continouse track state and without it doesn't track continouse if you want to check then commenct this and print console message outside box and you will see not tracking
+  // console.log(xhr.readyState); //we have just state but don't have response
+  //***let see how will response achieve
+
+  if(xhr.readyState===4){
+    // console.log(this.responseText) //now u have response text
+
+//***** let use of response to know about user result
+  const data=JSON.parse(this.responseText); //response always come in the form of "string" so we convert in the form of json object
+   console.log(data.results[0].gender);
+
+  }
+xhr.send();  //****it used to call xhr
+
+}
+
+    xhr.send(); //used 'send' property to call "open" without call request will not complete
+  </script>
+</html>

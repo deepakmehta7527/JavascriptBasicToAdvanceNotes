@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chai aur js</title>
+  </head>
+  <body>
+    <h1>running smoothly</h1>
+    <button id="stop">stop</button>
+    <button id="start">start</button>
+  </body>
+  <script>
+
+
+    const changetext=function(str){
+       console.log(str,Date.now());
+    }
+
+
+    let str;
+    document.querySelector("#start").addEventListener('click',function(e){
+      console.log("start");
+      str=setInterval(changetext, 1000,"Hii");//it third argument is optional to pass reference value
+    })
+
+   document.querySelector("#stop").addEventListener('click',function(e){
+    console.log("stop");
+    clearInterval(str);
+   })
+
+  </script>
+</html>
