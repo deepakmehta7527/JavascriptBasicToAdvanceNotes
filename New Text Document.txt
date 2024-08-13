@@ -1,0 +1,19 @@
+href="./head.css" := means we are inside root directory then it website work well
+
+2)meta tag "viewport" specially made for "mobile devices"
+3)without "label" tag screenreader couldn't be able to read so we used "label" tag 
+4)when you give "input" tag  pass "id" attribute and same name give to "label" tag of attribute "for" value then whenever you click on level automatically
+5)"action" and "method" where define where information should go like:-
+it should go on server or store in database 
+6)when you click on "submit" in form all information will be submit
+7)in html some tag you can declare but that does not perform action without "javascript"   
+
+
+
+READ MDN document
+1)input form
+2)html semantic 
+
+
+
+
